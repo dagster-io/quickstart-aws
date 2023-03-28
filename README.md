@@ -61,7 +61,7 @@ Dagster allows using environment variables to handle sensitive information. You 
 
 In this example, we use [`s3_pickle_io_manager`](https://docs.dagster.io/_apidocs/libraries/dagster-aws#dagster_aws.s3.s3_pickle_io_manager) to write outputs to S3 and read inputs from it and [`s3_resource`](https://docs.dagster.io/_apidocs/libraries/dagster-aws#dagster_aws.s3.s3_resource) to interact with S3 instance inside an asset.
 
-The configurations of the S3 connection are defined in [`quickstart_aws/repository.py`](./quickstart_aws/repository.py), which requires the following environment variables:
+The configurations of the S3 connection are defined with `Definitions` in [`quickstart_aws/__init__.py`](./quickstart_aws/__init__.py), which requires the following environment variables:
 - `AWS_ACCESS_KEY_ID`
   - *Note: `s3_resource` uses boto under the hood, so if you are accessing your private buckets, you will need to provide the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables or follow one of the other boto authentication methods. Check out the [AWS documentation for accessing AWS using your AWS credentials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html).*
 - `AWS_SECRET_ACCESS_KEY`
